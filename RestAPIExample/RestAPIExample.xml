@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RestAPIExample</name>
+    </assembly>
+    <members>
+        <member name="M:RestAPIExample.Controllers.BooksController.GetAllBooks(System.Int32)">
+            <summary>
+            Return all books
+            </summary>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPIExample.Controllers.BooksController.GetBookById(System.Int32)">
+            <summary>
+            Get book by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPIExample.Controllers.BooksController.Create(RestAPIExample.BL.Book)">
+            <summary>
+            Add book to list
+            </summary>
+            <param name="book"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPIExample.Controllers.BooksController.Update(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{RestAPIExample.BL.Book})">
+            <summary>
+            Update book data
+            </summary>
+            <param name="id"></param>
+            <param name="bookUpdate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPIExample.Controllers.BooksController.Delete">
+            <summary>
+            Delete all books
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RestAPIExample.Controllers.BooksController.Delete(System.Int32)">
+            <summary>
+            Delete book by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
