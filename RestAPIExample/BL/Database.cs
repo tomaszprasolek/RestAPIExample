@@ -2,18 +2,13 @@
 
 namespace RestAPIExample.BL
 {
-    public class Database
+    public static class Database
     {
-        public List<Book> Books;
-
-        public Database()
+        public static List<Book> Books = new List<Book>
         {
-            Books = new List<Book>
-            {
-                new Book { Id = 1, Title = "Wiedźmin" },
-                new Book { Id = 2, Title = "Lupus" },
-                new Book { Id = 3, Title = "Narkonomia" }
-            };
-        }
+            new Book { Id = 1, Title = "Wiedźmin", Author = "Sapkowski" },
+            new Book { Id = 2, Title = "Lupus" },
+            new Book { Id = 3, Title = "Narkonomia" }
+        };
     }
 }
