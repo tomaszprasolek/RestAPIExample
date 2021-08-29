@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RestAPIExample.BL;
-using System.Collections.Generic;
+using System;
 using System.Linq;
 
 namespace RestAPIExample.Controllers
@@ -19,9 +19,14 @@ namespace RestAPIExample.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetAllBooks([FromQuery] int count)
         {
-           var books = Database.Books;
+            if (count <= 0)
+            {
+                throw new ArgumentException("Invalid count", nameof(count));
+            }
+
+           var books = Database.Books.Take(count);
 
             if (books.Any() == false)
                 return NotFound();
@@ -30,7 +35,7 @@ namespace RestAPIExample.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult GetBookById(int id)
         {
             var book = Database.Books.FirstOrDefault(x => x.Id == id);
             if (book == null)
